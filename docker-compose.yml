@@ -15,7 +15,7 @@ services:
     image: postgres:16.1-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-      - ../2. Init Database:/docker-entrypoint-initdb.d
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_USER=SquadStat
       - POSTGRES_PASSWORD=SquadStat
@@ -37,13 +37,7 @@ services:
         limits:
           cpus: '0.5'
           memory: 1G
-    networks:
-      - postgres
 
 volumes:
   postgres_data:
   pgadmin-data:
-
-networks:
-  postgres:
-    driver: bridge

@@ -4,7 +4,7 @@ from sqlalchemy import (Column, DateTime, Integer, Boolean, MetaData, String, Ta
                         create_engine)
 from databases import Database
 
-DATABASE_URL = "postgresql://postgres:1234@localhost/SquadStatDB"#os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL")#"postgresql://postgres:1234@localhost/SquadStatDB"#
 
 # SQLAlchemy
 engine = create_engine(DATABASE_URL)
