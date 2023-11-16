@@ -38,459 +38,464 @@ CREATE TABLE session_weapons (
     UNIQUE (session_id, weapon_id)
 );
 
-insert into weapon_types(weapon_name) values ('M16A4');
-insert into weapon_types(weapon_name) values ('M4A1');
-insert into weapon_types(weapon_name) values ('M27');
-insert into weapon_types(weapon_name) values ('EF88');
-insert into weapon_types(weapon_name) values ('L85A2');
-insert into weapon_types(weapon_name) values ('L86A2');
-insert into weapon_types(weapon_name) values ('Type-95');
-insert into weapon_types(weapon_name) values ('Type-95 Carb');
-insert into weapon_types(weapon_name) values ('AK74');
-insert into weapon_types(weapon_name) values ('AK-12');
-insert into weapon_types(weapon_name) values ('AKS-74u');
-insert into weapon_types(weapon_name) values ('SVD');
-insert into weapon_types(weapon_name) values ('Type-88 Gross');
-insert into weapon_types(weapon_name) values ('M110 ');
-insert into weapon_types(weapon_name) values ('HK417');
-insert into weapon_types(weapon_name) values ('G3A3');
-insert into weapon_types(weapon_name) values ('FN FAL');
-insert into weapon_types(weapon_name) values ('HK-51');
-insert into weapon_types(weapon_name) values ('SKS');
-insert into weapon_types(weapon_name) values ('AKM');
-insert into weapon_types(weapon_name) values ('AMD65');
-insert into weapon_types(weapon_name) values ('ASVAL');
-insert into weapon_types(weapon_name) values ('M249_Militia');
-insert into weapon_types(weapon_name) values ('M249_US/AU');
-insert into weapon_types(weapon_name) values ('Type 95 LMG');
-insert into weapon_types(weapon_name) values ('L110A2');
-insert into weapon_types(weapon_name) values ('RPK74 ');
-insert into weapon_types(weapon_name) values ('Type-88 MG');
-insert into weapon_types(weapon_name) values ('G3 MG');
-insert into weapon_types(weapon_name) values ('RPK DRUM');
-insert into weapon_types(weapon_name) values ('RPD');
-insert into weapon_types(weapon_name) values ('PKM');
-insert into weapon_types(weapon_name) values ('PKP');
-insert into weapon_types(weapon_name) values ('L7A2');
-insert into weapon_types(weapon_name) values ('M240B');
-insert into weapon_types(weapon_name) values ('Maximi');
-insert into weapon_types(weapon_name) values ('MG3');
-insert into weapon_types(weapon_name) values ('Mosin Nugget');
-insert into weapon_types(weapon_name) values ('Mosin Badbine');
-insert into weapon_types(weapon_name) values ('C14 Guass Rifle');
-insert into weapon_types(weapon_name) values ('SV98M');
-insert into weapon_types(weapon_name) values ('PPSH');
-insert into weapon_types(weapon_name) values ('Skorpion');
-insert into weapon_types(weapon_name) values ('TT-33');
-insert into weapon_types(weapon_name) values ('M9A1');
-insert into weapon_types(weapon_name) values ('Browning P35');
-insert into weapon_types(weapon_name) values ('MP-443');
-insert into weapon_types(weapon_name) values ('L131A1');
-insert into weapon_types(weapon_name) values ('M-17');
-insert into weapon_types(weapon_name) values ('Makarov');
-insert into weapon_types(weapon_name) values ('Type 92');
-insert into weapon_types(weapon_name) values ('Browning Hi Powe');
-insert into maps(map_name) values ('Anvil_AAS_v1');
-insert into maps(map_name) values ('Anvil_AAS_v2');
-insert into maps(map_name) values ('Anvil_Invasion_v1');
-insert into maps(map_name) values ('Anvil_Invasion_v2');
-insert into maps(map_name) values ('Anvil_RAAS_v1');
-insert into maps(map_name) values ('Anvil_RAAS_v2');
-insert into maps(map_name) values ('Anvil_RAAS_v3');
-insert into maps(map_name) values ('Anvil_RAAS_v4');
-insert into maps(map_name) values ('Anvil_Skirmish_v1');
-insert into maps(map_name) values ('Anvil_TC_v1');
-insert into maps(map_name) values ('AlBasrah_AAS_v1');
-insert into maps(map_name) values ('AlBasrah_AAS_v2');
-insert into maps(map_name) values ('AlBasrah_AAS_v3');
-insert into maps(map_name) values ('AlBasrah_Insurgency_v1');
-insert into maps(map_name) values ('AlBasrah_Invasion_v1');
-insert into maps(map_name) values ('AlBasrah_Invasion_v2');
-insert into maps(map_name) values ('AlBasrah_Invasion_v3');
-insert into maps(map_name) values ('AlBasrah_Invasion_v4');
-insert into maps(map_name) values ('AlBasrah_Invasion_v5');
-insert into maps(map_name) values ('AlBasrah_Invasion_v6');
-insert into maps(map_name) values ('AlBasrah_Invasion_v7');
-insert into maps(map_name) values ('AlBasrah_Invasion_v8');
-insert into maps(map_name) values ('AlBasrah_RAAS_v1');
-insert into maps(map_name) values ('AlBasrah_Seed_v1');
-insert into maps(map_name) values ('AlBasrah_Skirmish_v1');
-insert into maps(map_name) values ('AlBasrah_Skirmish_v2');
-insert into maps(map_name) values ('AlBasrah_TA_v1');
-insert into maps(map_name) values ('AlBasrah_TC_v1');
-insert into maps(map_name) values ('AlBasrah_TC_v2');
-insert into maps(map_name) values ('Belaya_AAS_v1');
-insert into maps(map_name) values ('Belaya_AAS_v2');
-insert into maps(map_name) values ('Belaya_AAS_v3');
-insert into maps(map_name) values ('Belaya_Invasion_v1');
-insert into maps(map_name) values ('Belaya_Invasion_v2');
-insert into maps(map_name) values ('Belaya_Invasion_v3');
-insert into maps(map_name) values ('Belaya_RAAS_v1');
-insert into maps(map_name) values ('Belaya_RAAS_v2');
-insert into maps(map_name) values ('Belaya_RAAS_v3');
-insert into maps(map_name) values ('Belaya_RAAS_v4');
-insert into maps(map_name) values ('Belaya_RAAS_v5');
-insert into maps(map_name) values ('Belaya_Skirmish_v1');
-insert into maps(map_name) values ('Belaya_TC_v1');
-insert into maps(map_name) values ('Chora_AAS_v1');
-insert into maps(map_name) values ('Chora_AAS_v2');
-insert into maps(map_name) values ('Chora_AAS_v3');
-insert into maps(map_name) values ('Chora_AAS_v4');
-insert into maps(map_name) values ('Chora_AAS_v5');
-insert into maps(map_name) values ('Chora_AAS_v6');
-insert into maps(map_name) values ('Chora_Insurgency_v1');
-insert into maps(map_name) values ('Chora_Invasion_v1');
-insert into maps(map_name) values ('Chora_Invasion_v2');
-insert into maps(map_name) values ('Chora_RAAS_v1');
-insert into maps(map_name) values ('Chora_RAAS_v2');
-insert into maps(map_name) values ('Chora_RAAS_v3');
-insert into maps(map_name) values ('Chora_RAAS_v4');
-insert into maps(map_name) values ('Chora_RAAS_v5');
-insert into maps(map_name) values ('Chora_Skirmish_v1');
-insert into maps(map_name) values ('Chora_TC_v1');
-insert into maps(map_name) values ('Fallujah_AAS_v1');
-insert into maps(map_name) values ('Fallujah_AAS_v2');
-insert into maps(map_name) values ('Fallujah_Insurgency_v1');
-insert into maps(map_name) values ('Fallujah_Invasion_v1');
-insert into maps(map_name) values ('Fallujah_Invasion_v2');
-insert into maps(map_name) values ('Fallujah_Invasion_v3');
-insert into maps(map_name) values ('Fallujah_Invasion_v4');
-insert into maps(map_name) values ('Fallujah_Invasion_v5');
-insert into maps(map_name) values ('Fallujah_Invasion_v6');
-insert into maps(map_name) values ('Fallujah_RAAS_v1');
-insert into maps(map_name) values ('Fallujah_RAAS_v2');
-insert into maps(map_name) values ('Fallujah_RAAS_v3');
-insert into maps(map_name) values ('Fallujah_RAAS_v4');
-insert into maps(map_name) values ('Fallujah_RAAS_v5');
-insert into maps(map_name) values ('Fallujah_RAAS_v6');
-insert into maps(map_name) values ('Fallujah_RAAS_v7');
-insert into maps(map_name) values ('Fallujah_Seed_v1');
-insert into maps(map_name) values ('Fallujah_Skirmish_v1');
-insert into maps(map_name) values ('Fallujah_Skirmish_v2');
-insert into maps(map_name) values ('Fallujah_TC_v1');
-insert into maps(map_name) values ('Fallujah_TC_v2');
-insert into maps(map_name) values ('FoolsRoad_AAS_v1');
-insert into maps(map_name) values ('FoolsRoad_AAS_v2');
-insert into maps(map_name) values ('FoolsRoad_Destruction_v1');
-insert into maps(map_name) values ('FoolsRoad_Invasion_v1');
-insert into maps(map_name) values ('FoolsRoad_RAAS_v1');
-insert into maps(map_name) values ('FoolsRoad_RAAS_v2');
-insert into maps(map_name) values ('FoolsRoad_RAAS_v3');
-insert into maps(map_name) values ('FoolsRoad_RAAS_v4');
-insert into maps(map_name) values ('FoolsRoad_RAAS_v5');
-insert into maps(map_name) values ('FoolsRoad_Skirmish_v1');
-insert into maps(map_name) values ('FoolsRoad_Skirmish_v2');
-insert into maps(map_name) values ('FoolsRoad_TC_v1');
-insert into maps(map_name) values ('GooseBay_AAS_v1');
-insert into maps(map_name) values ('GooseBay_AAS_v2');
-insert into maps(map_name) values ('GooseBay_Invasion_v1');
-insert into maps(map_name) values ('GooseBay_Invasion_v2');
-insert into maps(map_name) values ('GooseBay_Invasion_v3');
-insert into maps(map_name) values ('GooseBay_Invasion_v4');
-insert into maps(map_name) values ('GooseBay_Invasion_v5');
-insert into maps(map_name) values ('GooseBay_RAAS_v1');
-insert into maps(map_name) values ('GooseBay_RAAS_v2');
-insert into maps(map_name) values ('GooseBay_RAAS_v3');
-insert into maps(map_name) values ('GooseBay_RAAS_v4');
-insert into maps(map_name) values ('GooseBay_Seed_v1');
-insert into maps(map_name) values ('GooseBay_Skirmish_v1');
-insert into maps(map_name) values ('Gorodok_AAS_v1');
-insert into maps(map_name) values ('Gorodok_AAS_v2');
-insert into maps(map_name) values ('Gorodok_AAS_v3');
-insert into maps(map_name) values ('Gorodok_AAS_v4');
-insert into maps(map_name) values ('Gorodok_Destruction_v1');
-insert into maps(map_name) values ('Gorodok_Insurgency_v1');
-insert into maps(map_name) values ('Gorodok_Invasion_v1');
-insert into maps(map_name) values ('Gorodok_Invasion_v2');
-insert into maps(map_name) values ('Gorodok_Invasion_v3');
-insert into maps(map_name) values ('Gorodok_RAAS_v01');
-insert into maps(map_name) values ('Gorodok_RAAS_v02');
-insert into maps(map_name) values ('Gorodok_RAAS_v03');
-insert into maps(map_name) values ('Gorodok_RAAS_v04');
-insert into maps(map_name) values ('Gorodok_RAAS_v05');
-insert into maps(map_name) values ('Gorodok_RAAS_v06');
-insert into maps(map_name) values ('Gorodok_RAAS_v07');
-insert into maps(map_name) values ('Gorodok_RAAS_v08');
-insert into maps(map_name) values ('Gorodok_RAAS_v09');
-insert into maps(map_name) values ('Gorodok_RAAS_v10');
-insert into maps(map_name) values ('Gorodok_RAAS_v11');
-insert into maps(map_name) values ('Gorodok_RAAS_v12');
-insert into maps(map_name) values ('Gorodok_Skirmish_v1');
-insert into maps(map_name) values ('Gorodok_TC_v1');
-insert into maps(map_name) values ('Gorodok_TC_v2');
-insert into maps(map_name) values ('Kamdesh_AAS_v1');
-insert into maps(map_name) values ('Kamdesh_Insurgency_v1');
-insert into maps(map_name) values ('Kamdesh_Insurgency_v2');
-insert into maps(map_name) values ('Kamdesh_Invasion_v1');
-insert into maps(map_name) values ('Kamdesh_Invasion_v2');
-insert into maps(map_name) values ('Kamdesh_Invasion_v3');
-insert into maps(map_name) values ('Kamdesh_Invasion_v4');
-insert into maps(map_name) values ('Kamdesh_Invasion_v5');
-insert into maps(map_name) values ('Kamdesh_Invasion_v6');
-insert into maps(map_name) values ('Kamdesh_Invasion_v7');
-insert into maps(map_name) values ('Kamdesh_RAAS_v1');
-insert into maps(map_name) values ('Kamdesh_RAAS_v2');
-insert into maps(map_name) values ('Kamdesh_RAAS_v3');
-insert into maps(map_name) values ('Kamdesh_RAAS_v4');
-insert into maps(map_name) values ('Kamdesh_RAAS_v5');
-insert into maps(map_name) values ('Kamdesh_RAAS_v6');
-insert into maps(map_name) values ('Kamdesh_RAAS_v7');
-insert into maps(map_name) values ('Kamdesh_Skirmish_v1');
-insert into maps(map_name) values ('Kamdesh_TC_v1');
-insert into maps(map_name) values ('Kamdesh_TC_v2');
-insert into maps(map_name) values ('Kamdesh_TC_v3');
-insert into maps(map_name) values ('Kamdesh_TC_v4');
-insert into maps(map_name) values ('Kohat_AAS_v1');
-insert into maps(map_name) values ('Kohat_AAS_v2');
-insert into maps(map_name) values ('Kohat_AAS_v3');
-insert into maps(map_name) values ('Kohat_Insurgency_v1');
-insert into maps(map_name) values ('Kohat_Invasion_v1');
-insert into maps(map_name) values ('Kohat_Invasion_v2');
-insert into maps(map_name) values ('Kohat_Invasion_v3');
-insert into maps(map_name) values ('Kohat_Invasion_v4');
-insert into maps(map_name) values ('Kohat_RAAS_v01');
-insert into maps(map_name) values ('Kohat_RAAS_v02');
-insert into maps(map_name) values ('Kohat_RAAS_v03');
-insert into maps(map_name) values ('Kohat_RAAS_v04');
-insert into maps(map_name) values ('Kohat_RAAS_v05');
-insert into maps(map_name) values ('Kohat_RAAS_v06');
-insert into maps(map_name) values ('Kohat_RAAS_v07');
-insert into maps(map_name) values ('Kohat_RAAS_v08');
-insert into maps(map_name) values ('Kohat_RAAS_v09');
-insert into maps(map_name) values ('Kohat_RAAS_v10');
-insert into maps(map_name) values ('Kohat_Skirmish_v1');
-insert into maps(map_name) values ('Kohat_TC_v1');
-insert into maps(map_name) values ('Kokan_AAS_v1');
-insert into maps(map_name) values ('Kokan_AAS_v2');
-insert into maps(map_name) values ('Kokan_AAS_v3');
-insert into maps(map_name) values ('Kokan_Insurgency_v1');
-insert into maps(map_name) values ('Kokan_Invasion_v1');
-insert into maps(map_name) values ('Kokan_RAAS_v1');
-insert into maps(map_name) values ('Kokan_RAAS_v2');
-insert into maps(map_name) values ('Kokan_RAAS_v3');
-insert into maps(map_name) values ('Kokan_RAAS_v4');
-insert into maps(map_name) values ('Kokan_Skirmish_v1');
-insert into maps(map_name) values ('Kokan_TC_v1');
-insert into maps(map_name) values ('Lashkar_AAS_v1');
-insert into maps(map_name) values ('Lashkar_AAS_v2');
-insert into maps(map_name) values ('Lashkar_AAS_v3');
-insert into maps(map_name) values ('Lashkar_AAS_v4');
-insert into maps(map_name) values ('Lashkar_Insurgency_v1');
-insert into maps(map_name) values ('Lashkar_Invasion_v1');
-insert into maps(map_name) values ('Lashkar_Invasion_v2');
-insert into maps(map_name) values ('Lashkar_Invasion_v3');
-insert into maps(map_name) values ('Lashkar_Invasion_v4');
-insert into maps(map_name) values ('Lashkar_RAAS_v1');
-insert into maps(map_name) values ('Lashkar_RAAS_v2');
-insert into maps(map_name) values ('Lashkar_RAAS_v3');
-insert into maps(map_name) values ('Lashkar_RAAS_v4');
-insert into maps(map_name) values ('Lashkar_RAAS_v5');
-insert into maps(map_name) values ('Lashkar_Skirmish_v1');
-insert into maps(map_name) values ('Lashkar_TC_v1');
-insert into maps(map_name) values ('Lashkar_TC_v2');
-insert into maps(map_name) values ('Lashkar_TC_v3');
-insert into maps(map_name) values ('Lashkar_TC_v4');
-insert into maps(map_name) values ('Lashkar_TC_v5');
-insert into maps(map_name) values ('Logar_AAS_v1');
-insert into maps(map_name) values ('Logar_AAS_v2');
-insert into maps(map_name) values ('Logar_AAS_v3');
-insert into maps(map_name) values ('Logar_Insurgency_v1');
-insert into maps(map_name) values ('Logar_RAAS_v1');
-insert into maps(map_name) values ('Logar_RAAS_v2');
-insert into maps(map_name) values ('Logar_Seed_v1');
-insert into maps(map_name) values ('Logar_Skirmish_v1');
-insert into maps(map_name) values ('Logar_TC_v1');
-insert into maps(map_name) values ('Manicouagan_AAS_v1');
-insert into maps(map_name) values ('Manicouagan_AAS_v2');
-insert into maps(map_name) values ('Manicouagan_AAS_v3');
-insert into maps(map_name) values ('Manicouagan_AAS_v4');
-insert into maps(map_name) values ('Manicouagan_AAS_v5');
-insert into maps(map_name) values ('Manicouagan_Invasion_v1');
-insert into maps(map_name) values ('Manicouagan_Invasion_v2');
-insert into maps(map_name) values ('Manicouagan_Invasion_v3');
-insert into maps(map_name) values ('Manicouagan_Invasion_v4');
-insert into maps(map_name) values ('Manicouagan_Invasion_v5');
-insert into maps(map_name) values ('Manicouagan_Invasion_v6');
-insert into maps(map_name) values ('Manicouagan_Invasion_v7');
-insert into maps(map_name) values ('Manicouagan_Invasion_v8');
-insert into maps(map_name) values ('Manicouagan_Invasion_v9');
-insert into maps(map_name) values ('Manicouagan_RAAS_v1');
-insert into maps(map_name) values ('Manicouagan_RAAS_v10');
-insert into maps(map_name) values ('Manicouagan_RAAS_v11');
-insert into maps(map_name) values ('Manicouagan_RAAS_v12');
-insert into maps(map_name) values ('Manicouagan_RAAS_v13');
-insert into maps(map_name) values ('Manicouagan_RAAS_v14');
-insert into maps(map_name) values ('Manicouagan_RAAS_v15');
-insert into maps(map_name) values ('Manicouagan_RAAS_v2');
-insert into maps(map_name) values ('Manicouagan_RAAS_v3');
-insert into maps(map_name) values ('Manicouagan_RAAS_v4');
-insert into maps(map_name) values ('Manicouagan_RAAS_v5');
-insert into maps(map_name) values ('Manicouagan_RAAS_v6');
-insert into maps(map_name) values ('Manicouagan_RAAS_v7');
-insert into maps(map_name) values ('Manicouagan_RAAS_v8');
-insert into maps(map_name) values ('Manicouagan_RAAS_v9');
-insert into maps(map_name) values ('Manicouagan_Seed_v1');
-insert into maps(map_name) values ('Manicouagan_Skirmish_v1');
-insert into maps(map_name) values ('Manicouagan_Skirmish_v2');
-insert into maps(map_name) values ('Manicouagan_Skirmish_v3');
-insert into maps(map_name) values ('Mestia_AAS_v1');
-insert into maps(map_name) values ('Mestia_AAS_v2');
-insert into maps(map_name) values ('Mestia_Invasion_v1');
-insert into maps(map_name) values ('Mestia_Invasion_v2');
-insert into maps(map_name) values ('Mestia_RAAS_v1');
-insert into maps(map_name) values ('Mestia_RAAS_v2');
-insert into maps(map_name) values ('Mestia_Skirmish_v1');
-insert into maps(map_name) values ('Mestia_TC_v1');
-insert into maps(map_name) values ('Mutaha_AAS_v1');
-insert into maps(map_name) values ('Mutaha_AAS_v2');
-insert into maps(map_name) values ('Mutaha_AAS_v3');
-insert into maps(map_name) values ('Mutaha_AAS_v4');
-insert into maps(map_name) values ('Mutaha_Invasion_v1');
-insert into maps(map_name) values ('Mutaha_Invasion_v2');
-insert into maps(map_name) values ('Mutaha_Invasion_v3');
-insert into maps(map_name) values ('Mutaha_Invasion_v4');
-insert into maps(map_name) values ('Mutaha_RAAS_v1');
-insert into maps(map_name) values ('Mutaha_RAAS_v2');
-insert into maps(map_name) values ('Mutaha_RAAS_v3');
-insert into maps(map_name) values ('Mutaha_RAAS_v4');
-insert into maps(map_name) values ('Mutaha_RAAS_v5');
-insert into maps(map_name) values ('Mutaha_RAAS_v6');
-insert into maps(map_name) values ('Mutaha_RAAS_v7');
-insert into maps(map_name) values ('Mutaha_Seed_v1');
-insert into maps(map_name) values ('Mutaha_Skirmish_v1');
-insert into maps(map_name) values ('Mutaha_Tanks_v1');
-insert into maps(map_name) values ('Mutaha_TC_v1');
-insert into maps(map_name) values ('Mutaha_TC_v2');
-insert into maps(map_name) values ('Narva_AAS_v1');
-insert into maps(map_name) values ('Narva_AAS_v2');
-insert into maps(map_name) values ('Narva_AAS_v3');
-insert into maps(map_name) values ('Narva_AAS_v4');
-insert into maps(map_name) values ('Narva_Destruction_v1');
-insert into maps(map_name) values ('Narva_Invasion_v1');
-insert into maps(map_name) values ('Narva_Invasion_v2');
-insert into maps(map_name) values ('Narva_Invasion_v3');
-insert into maps(map_name) values ('Narva_Invasion_v4');
-insert into maps(map_name) values ('Narva_Invasion_v5');
-insert into maps(map_name) values ('Narva_RAAS_v1');
-insert into maps(map_name) values ('Narva_RAAS_v2');
-insert into maps(map_name) values ('Narva_RAAS_v3');
-insert into maps(map_name) values ('Narva_RAAS_v4');
-insert into maps(map_name) values ('Narva_RAAS_v5');
-insert into maps(map_name) values ('Narva_RAAS_v6');
-insert into maps(map_name) values ('Narva_RAAS_v7');
-insert into maps(map_name) values ('Narva_Skirmish_v1');
-insert into maps(map_name) values ('Narva_TA_v1');
-insert into maps(map_name) values ('Narva_TC_v1');
-insert into maps(map_name) values ('Narva_TC_v2');
-insert into maps(map_name) values ('Skorpo_AAS_v1');
-insert into maps(map_name) values ('Skorpo_Invasion_v1');
-insert into maps(map_name) values ('Skorpo_Invasion_v2');
-insert into maps(map_name) values ('Skorpo_Invasion_v3');
-insert into maps(map_name) values ('Skorpo_Invasion_v4');
-insert into maps(map_name) values ('Skorpo_RAAS_v1');
-insert into maps(map_name) values ('Skorpo_RAAS_v2');
-insert into maps(map_name) values ('Skorpo_RAAS_v3');
-insert into maps(map_name) values ('Skorpo_RAAS_v4');
-insert into maps(map_name) values ('Skorpo_RAAS_v5');
-insert into maps(map_name) values ('Skorpo_Skirmish_v1');
-insert into maps(map_name) values ('Skorpo_TC_v1');
-insert into maps(map_name) values ('Skorpo_TC_v2');
-insert into maps(map_name) values ('Skorpo_TC_v3');
-insert into maps(map_name) values ('Sumari_AAS_v1');
-insert into maps(map_name) values ('Sumari_AAS_v2');
-insert into maps(map_name) values ('Sumari_AAS_v3');
-insert into maps(map_name) values ('Sumari_AAS_v4');
-insert into maps(map_name) values ('Sumari_AAS_v5');
-insert into maps(map_name) values ('Sumari_Insurgency_v1');
-insert into maps(map_name) values ('Sumari_Invasion_v1');
-insert into maps(map_name) values ('Sumari_RAAS_v1');
-insert into maps(map_name) values ('Sumari_RAAS_v2');
-insert into maps(map_name) values ('Sumari_Seed_v1');
-insert into maps(map_name) values ('Sumari_Seed_v2');
-insert into maps(map_name) values ('Sumari_Seed_v3');
-insert into maps(map_name) values ('Sumari_Skirmish_v1');
-insert into maps(map_name) values ('Sumari_TC_v1');
-insert into maps(map_name) values ('Tallil_AAS_v1');
-insert into maps(map_name) values ('Tallil_AAS_v2');
-insert into maps(map_name) values ('Tallil_Invasion_v1');
-insert into maps(map_name) values ('Tallil_Invasion_v2');
-insert into maps(map_name) values ('Tallil_Invasion_v3');
-insert into maps(map_name) values ('Tallil_Invasion_v4');
-insert into maps(map_name) values ('Tallil_Invasion_v5');
-insert into maps(map_name) values ('Tallil_RAAS_v1');
-insert into maps(map_name) values ('Tallil_RAAS_v2');
-insert into maps(map_name) values ('Tallil_RAAS_v3');
-insert into maps(map_name) values ('Tallil_RAAS_v4');
-insert into maps(map_name) values ('Tallil_RAAS_v5');
-insert into maps(map_name) values ('Tallil_RAAS_v6');
-insert into maps(map_name) values ('Tallil_RAAS_v7');
-insert into maps(map_name) values ('Tallil_RAAS_v8');
-insert into maps(map_name) values ('Tallil_Seed_v1');
-insert into maps(map_name) values ('Tallil_Seed_v2');
-insert into maps(map_name) values ('Tallil_Skirmish_v1');
-insert into maps(map_name) values ('Tallil_Skirmish_v2');
-insert into maps(map_name) values ('Tallil_Skirmish_v3');
-insert into maps(map_name) values ('Tallil_Tanks_v1');
-insert into maps(map_name) values ('Tallil_Tanks_v2');
-insert into maps(map_name) values ('Tallil_TA_v1');
-insert into maps(map_name) values ('Tallil_Outskirts_TC_v1');
-insert into maps(map_name) values ('Yehorivka_AAS_v1');
-insert into maps(map_name) values ('Yehorivka_AAS_v2');
-insert into maps(map_name) values ('Yehorivka_AAS_v3');
-insert into maps(map_name) values ('Yehorivka_AAS_v4');
-insert into maps(map_name) values ('Yehorivka_Destruction_v1');
-insert into maps(map_name) values ('Yehorivka_Invasion_v1');
-insert into maps(map_name) values ('Yehorivka_Invasion_v2');
-insert into maps(map_name) values ('Yehorivka_Invasion_v3');
-insert into maps(map_name) values ('Yehorivka_RAAS_v01');
-insert into maps(map_name) values ('Yehorivka_RAAS_v02');
-insert into maps(map_name) values ('Yehorivka_RAAS_v03');
-insert into maps(map_name) values ('Yehorivka_RAAS_v04');
-insert into maps(map_name) values ('Yehorivka_RAAS_v05');
-insert into maps(map_name) values ('Yehorivka_RAAS_v06');
-insert into maps(map_name) values ('Yehorivka_RAAS_v07');
-insert into maps(map_name) values ('Yehorivka_RAAS_v08');
-insert into maps(map_name) values ('Yehorivka_RAAS_v09');
-insert into maps(map_name) values ('Yehorivka_RAAS_v10');
-insert into maps(map_name) values ('Yehorivka_RAAS_v11');
-insert into maps(map_name) values ('Yehorivka_RAAS_v12');
-insert into maps(map_name) values ('Yehorivka_RAAS_v13');
-insert into maps(map_name) values ('Yehorivka_RAAS_v14');
-insert into maps(map_name) values ('Yehorivka_Skirmish_v1');
-insert into maps(map_name) values ('Yehorivka_Skirmish_v2');
-insert into maps(map_name) values ('Yehorivka_Skirmish_v3');
-insert into maps(map_name) values ('Yehorivka_TA_v1');
-insert into maps(map_name) values ('Yehorivka_TC_v1');
-insert into maps(map_name) values ('Yehorivka_TC_v2');
-insert into maps(map_name) values ('Yehorivka_TC_v3');
-insert into maps(map_name) values ('BlackCoast_AAS_v1');
-insert into maps(map_name) values ('BlackCoast_AAS_v2');
-insert into maps(map_name) values ('BlackCoast_Invasion_v1');
-insert into maps(map_name) values ('BlackCoast_Invasion_v2');
-insert into maps(map_name) values ('BlackCoast_Invasion_v3');
-insert into maps(map_name) values ('BlackCoast_Invasion_v4');
-insert into maps(map_name) values ('BlackCoast_Invasion_v5');
-insert into maps(map_name) values ('BlackCoast_RAAS_v1');
-insert into maps(map_name) values ('BlackCoast_RAAS_v2');
-insert into maps(map_name) values ('BlackCoast_RAAS_v3');
-insert into maps(map_name) values ('BlackCoast_RAAS_v4');
-insert into maps(map_name) values ('BlackCoast_RAAS_v5');
-insert into maps(map_name) values ('BlackCoast_Seed_v1');
-insert into maps(map_name) values ('BlackCoast_Skirmish_v1');
-insert into maps(map_name) values ('Harju_AAS_v1');
-insert into maps(map_name) values ('Harju_AAS_v2');
-insert into maps(map_name) values ('Harju_AAS_v3');
-insert into maps(map_name) values ('Harju_Invasion_v1');
-insert into maps(map_name) values ('Harju_Invasion_v2');
-insert into maps(map_name) values ('Harju_Invasion_v3');
-insert into maps(map_name) values ('Harju_Invasion_v4');
-insert into maps(map_name) values ('Harju_Invasion_v5');
-insert into maps(map_name) values ('Harju_RAAS_v1');
-insert into maps(map_name) values ('Harju_RAAS_v2');
-insert into maps(map_name) values ('Harju_RAAS_v3');
-insert into maps(map_name) values ('Harju_RAAS_v4');
-insert into maps(map_name) values ('Harju_RAAS_v5');
-insert into maps(map_name) values ('Harju_RAAS_v6');
-insert into maps(map_name) values ('Harju_Seed_v1');
-insert into maps(map_name) values ('Harju_Skirmish_v1');
-insert into maps(map_name) values ('Harju_Skirmish_v2');
+COPY weapon_types (weapon_name) FROM stdin;
+M16A4
+M4A1
+M27
+EF88
+L85A2
+L86A2
+Type-95
+Type-95 Carb
+AK74
+AK-12
+AKS-74u
+SVD
+Type-88 Gross
+M110 
+HK417
+G3A3
+FN FAL
+HK-51
+SKS
+AKM
+AMD65
+ASVAL
+M249_Militia
+M249_US/AU
+Type 95 LMG
+L110A2
+RPK74 
+Type-88 MG
+G3 MG
+RPK DRUM
+RPD
+PKM
+PKP
+L7A2
+M240B
+Maximi
+MG3
+Mosin Nugget
+Mosin Badbine
+C14 Guass Rifle
+SV98M
+PPSH
+Skorpion
+TT-33
+M9A1
+Browning P35
+MP-443
+L131A1
+M-17
+Makarov
+Type 92
+Browning Hi Powe
+\.
+
+COPY maps (map_name) FROM stdin;
+Anvil_AAS_v1
+Anvil_AAS_v2
+Anvil_Invasion_v1
+Anvil_Invasion_v2
+Anvil_RAAS_v1
+Anvil_RAAS_v2
+Anvil_RAAS_v3
+Anvil_RAAS_v4
+Anvil_Skirmish_v1
+Anvil_TC_v1
+AlBasrah_AAS_v1
+AlBasrah_AAS_v2
+AlBasrah_AAS_v3
+AlBasrah_Insurgency_v1
+AlBasrah_Invasion_v1
+AlBasrah_Invasion_v2
+AlBasrah_Invasion_v3
+AlBasrah_Invasion_v4
+AlBasrah_Invasion_v5
+AlBasrah_Invasion_v6
+AlBasrah_Invasion_v7
+AlBasrah_Invasion_v8
+AlBasrah_RAAS_v1
+AlBasrah_Seed_v1
+AlBasrah_Skirmish_v1
+AlBasrah_Skirmish_v2
+AlBasrah_TA_v1
+AlBasrah_TC_v1
+AlBasrah_TC_v2
+Belaya_AAS_v1
+Belaya_AAS_v2
+Belaya_AAS_v3
+Belaya_Invasion_v1
+Belaya_Invasion_v2
+Belaya_Invasion_v3
+Belaya_RAAS_v1
+Belaya_RAAS_v2
+Belaya_RAAS_v3
+Belaya_RAAS_v4
+Belaya_RAAS_v5
+Belaya_Skirmish_v1
+Belaya_TC_v1
+Chora_AAS_v1
+Chora_AAS_v2
+Chora_AAS_v3
+Chora_AAS_v4
+Chora_AAS_v5
+Chora_AAS_v6
+Chora_Insurgency_v1
+Chora_Invasion_v1
+Chora_Invasion_v2
+Chora_RAAS_v1
+Chora_RAAS_v2
+Chora_RAAS_v3
+Chora_RAAS_v4
+Chora_RAAS_v5
+Chora_Skirmish_v1
+Chora_TC_v1
+Fallujah_AAS_v1
+Fallujah_AAS_v2
+Fallujah_Insurgency_v1
+Fallujah_Invasion_v1
+Fallujah_Invasion_v2
+Fallujah_Invasion_v3
+Fallujah_Invasion_v4
+Fallujah_Invasion_v5
+Fallujah_Invasion_v6
+Fallujah_RAAS_v1
+Fallujah_RAAS_v2
+Fallujah_RAAS_v3
+Fallujah_RAAS_v4
+Fallujah_RAAS_v5
+Fallujah_RAAS_v6
+Fallujah_RAAS_v7
+Fallujah_Seed_v1
+Fallujah_Skirmish_v1
+Fallujah_Skirmish_v2
+Fallujah_TC_v1
+Fallujah_TC_v2
+FoolsRoad_AAS_v1
+FoolsRoad_AAS_v2
+FoolsRoad_Destruction_v1
+FoolsRoad_Invasion_v1
+FoolsRoad_RAAS_v1
+FoolsRoad_RAAS_v2
+FoolsRoad_RAAS_v3
+FoolsRoad_RAAS_v4
+FoolsRoad_RAAS_v5
+FoolsRoad_Skirmish_v1
+FoolsRoad_Skirmish_v2
+FoolsRoad_TC_v1
+GooseBay_AAS_v1
+GooseBay_AAS_v2
+GooseBay_Invasion_v1
+GooseBay_Invasion_v2
+GooseBay_Invasion_v3
+GooseBay_Invasion_v4
+GooseBay_Invasion_v5
+GooseBay_RAAS_v1
+GooseBay_RAAS_v2
+GooseBay_RAAS_v3
+GooseBay_RAAS_v4
+GooseBay_Seed_v1
+GooseBay_Skirmish_v1
+Gorodok_AAS_v1
+Gorodok_AAS_v2
+Gorodok_AAS_v3
+Gorodok_AAS_v4
+Gorodok_Destruction_v1
+Gorodok_Insurgency_v1
+Gorodok_Invasion_v1
+Gorodok_Invasion_v2
+Gorodok_Invasion_v3
+Gorodok_RAAS_v01
+Gorodok_RAAS_v02
+Gorodok_RAAS_v03
+Gorodok_RAAS_v04
+Gorodok_RAAS_v05
+Gorodok_RAAS_v06
+Gorodok_RAAS_v07
+Gorodok_RAAS_v08
+Gorodok_RAAS_v09
+Gorodok_RAAS_v10
+Gorodok_RAAS_v11
+Gorodok_RAAS_v12
+Gorodok_Skirmish_v1
+Gorodok_TC_v1
+Gorodok_TC_v2
+Kamdesh_AAS_v1
+Kamdesh_Insurgency_v1
+Kamdesh_Insurgency_v2
+Kamdesh_Invasion_v1
+Kamdesh_Invasion_v2
+Kamdesh_Invasion_v3
+Kamdesh_Invasion_v4
+Kamdesh_Invasion_v5
+Kamdesh_Invasion_v6
+Kamdesh_Invasion_v7
+Kamdesh_RAAS_v1
+Kamdesh_RAAS_v2
+Kamdesh_RAAS_v3
+Kamdesh_RAAS_v4
+Kamdesh_RAAS_v5
+Kamdesh_RAAS_v6
+Kamdesh_RAAS_v7
+Kamdesh_Skirmish_v1
+Kamdesh_TC_v1
+Kamdesh_TC_v2
+Kamdesh_TC_v3
+Kamdesh_TC_v4
+Kohat_AAS_v1
+Kohat_AAS_v2
+Kohat_AAS_v3
+Kohat_Insurgency_v1
+Kohat_Invasion_v1
+Kohat_Invasion_v2
+Kohat_Invasion_v3
+Kohat_Invasion_v4
+Kohat_RAAS_v01
+Kohat_RAAS_v02
+Kohat_RAAS_v03
+Kohat_RAAS_v04
+Kohat_RAAS_v05
+Kohat_RAAS_v06
+Kohat_RAAS_v07
+Kohat_RAAS_v08
+Kohat_RAAS_v09
+Kohat_RAAS_v10
+Kohat_Skirmish_v1
+Kohat_TC_v1
+Kokan_AAS_v1
+Kokan_AAS_v2
+Kokan_AAS_v3
+Kokan_Insurgency_v1
+Kokan_Invasion_v1
+Kokan_RAAS_v1
+Kokan_RAAS_v2
+Kokan_RAAS_v3
+Kokan_RAAS_v4
+Kokan_Skirmish_v1
+Kokan_TC_v1
+Lashkar_AAS_v1
+Lashkar_AAS_v2
+Lashkar_AAS_v3
+Lashkar_AAS_v4
+Lashkar_Insurgency_v1
+Lashkar_Invasion_v1
+Lashkar_Invasion_v2
+Lashkar_Invasion_v3
+Lashkar_Invasion_v4
+Lashkar_RAAS_v1
+Lashkar_RAAS_v2
+Lashkar_RAAS_v3
+Lashkar_RAAS_v4
+Lashkar_RAAS_v5
+Lashkar_Skirmish_v1
+Lashkar_TC_v1
+Lashkar_TC_v2
+Lashkar_TC_v3
+Lashkar_TC_v4
+Lashkar_TC_v5
+Logar_AAS_v1
+Logar_AAS_v2
+Logar_AAS_v3
+Logar_Insurgency_v1
+Logar_RAAS_v1
+Logar_RAAS_v2
+Logar_Seed_v1
+Logar_Skirmish_v1
+Logar_TC_v1
+Manicouagan_AAS_v1
+Manicouagan_AAS_v2
+Manicouagan_AAS_v3
+Manicouagan_AAS_v4
+Manicouagan_AAS_v5
+Manicouagan_Invasion_v1
+Manicouagan_Invasion_v2
+Manicouagan_Invasion_v3
+Manicouagan_Invasion_v4
+Manicouagan_Invasion_v5
+Manicouagan_Invasion_v6
+Manicouagan_Invasion_v7
+Manicouagan_Invasion_v8
+Manicouagan_Invasion_v9
+Manicouagan_RAAS_v1
+Manicouagan_RAAS_v10
+Manicouagan_RAAS_v11
+Manicouagan_RAAS_v12
+Manicouagan_RAAS_v13
+Manicouagan_RAAS_v14
+Manicouagan_RAAS_v15
+Manicouagan_RAAS_v2
+Manicouagan_RAAS_v3
+Manicouagan_RAAS_v4
+Manicouagan_RAAS_v5
+Manicouagan_RAAS_v6
+Manicouagan_RAAS_v7
+Manicouagan_RAAS_v8
+Manicouagan_RAAS_v9
+Manicouagan_Seed_v1
+Manicouagan_Skirmish_v1
+Manicouagan_Skirmish_v2
+Manicouagan_Skirmish_v3
+Mestia_AAS_v1
+Mestia_AAS_v2
+Mestia_Invasion_v1
+Mestia_Invasion_v2
+Mestia_RAAS_v1
+Mestia_RAAS_v2
+Mestia_Skirmish_v1
+Mestia_TC_v1
+Mutaha_AAS_v1
+Mutaha_AAS_v2
+Mutaha_AAS_v3
+Mutaha_AAS_v4
+Mutaha_Invasion_v1
+Mutaha_Invasion_v2
+Mutaha_Invasion_v3
+Mutaha_Invasion_v4
+Mutaha_RAAS_v1
+Mutaha_RAAS_v2
+Mutaha_RAAS_v3
+Mutaha_RAAS_v4
+Mutaha_RAAS_v5
+Mutaha_RAAS_v6
+Mutaha_RAAS_v7
+Mutaha_Seed_v1
+Mutaha_Skirmish_v1
+Mutaha_Tanks_v1
+Mutaha_TC_v1
+Mutaha_TC_v2
+Narva_AAS_v1
+Narva_AAS_v2
+Narva_AAS_v3
+Narva_AAS_v4
+Narva_Destruction_v1
+Narva_Invasion_v1
+Narva_Invasion_v2
+Narva_Invasion_v3
+Narva_Invasion_v4
+Narva_Invasion_v5
+Narva_RAAS_v1
+Narva_RAAS_v2
+Narva_RAAS_v3
+Narva_RAAS_v4
+Narva_RAAS_v5
+Narva_RAAS_v6
+Narva_RAAS_v7
+Narva_Skirmish_v1
+Narva_TA_v1
+Narva_TC_v1
+Narva_TC_v2
+Skorpo_AAS_v1
+Skorpo_Invasion_v1
+Skorpo_Invasion_v2
+Skorpo_Invasion_v3
+Skorpo_Invasion_v4
+Skorpo_RAAS_v1
+Skorpo_RAAS_v2
+Skorpo_RAAS_v3
+Skorpo_RAAS_v4
+Skorpo_RAAS_v5
+Skorpo_Skirmish_v1
+Skorpo_TC_v1
+Skorpo_TC_v2
+Skorpo_TC_v3
+Sumari_AAS_v1
+Sumari_AAS_v2
+Sumari_AAS_v3
+Sumari_AAS_v4
+Sumari_AAS_v5
+Sumari_Insurgency_v1
+Sumari_Invasion_v1
+Sumari_RAAS_v1
+Sumari_RAAS_v2
+Sumari_Seed_v1
+Sumari_Seed_v2
+Sumari_Seed_v3
+Sumari_Skirmish_v1
+Sumari_TC_v1
+Tallil_AAS_v1
+Tallil_AAS_v2
+Tallil_Invasion_v1
+Tallil_Invasion_v2
+Tallil_Invasion_v3
+Tallil_Invasion_v4
+Tallil_Invasion_v5
+Tallil_RAAS_v1
+Tallil_RAAS_v2
+Tallil_RAAS_v3
+Tallil_RAAS_v4
+Tallil_RAAS_v5
+Tallil_RAAS_v6
+Tallil_RAAS_v7
+Tallil_RAAS_v8
+Tallil_Seed_v1
+Tallil_Seed_v2
+Tallil_Skirmish_v1
+Tallil_Skirmish_v2
+Tallil_Skirmish_v3
+Tallil_Tanks_v1
+Tallil_Tanks_v2
+Tallil_TA_v1
+Tallil_Outskirts_TC_v1
+Yehorivka_AAS_v1
+Yehorivka_AAS_v2
+Yehorivka_AAS_v3
+Yehorivka_AAS_v4
+Yehorivka_Destruction_v1
+Yehorivka_Invasion_v1
+Yehorivka_Invasion_v2
+Yehorivka_Invasion_v3
+Yehorivka_RAAS_v01
+Yehorivka_RAAS_v02
+Yehorivka_RAAS_v03
+Yehorivka_RAAS_v04
+Yehorivka_RAAS_v05
+Yehorivka_RAAS_v06
+Yehorivka_RAAS_v07
+Yehorivka_RAAS_v08
+Yehorivka_RAAS_v09
+Yehorivka_RAAS_v10
+Yehorivka_RAAS_v11
+Yehorivka_RAAS_v12
+Yehorivka_RAAS_v13
+Yehorivka_RAAS_v14
+Yehorivka_Skirmish_v1
+Yehorivka_Skirmish_v2
+Yehorivka_Skirmish_v3
+Yehorivka_TA_v1
+Yehorivka_TC_v1
+Yehorivka_TC_v2
+Yehorivka_TC_v3
+BlackCoast_AAS_v1
+BlackCoast_AAS_v2
+BlackCoast_Invasion_v1
+BlackCoast_Invasion_v2
+BlackCoast_Invasion_v3
+BlackCoast_Invasion_v4
+BlackCoast_Invasion_v5
+BlackCoast_RAAS_v1
+BlackCoast_RAAS_v2
+BlackCoast_RAAS_v3
+BlackCoast_RAAS_v4
+BlackCoast_RAAS_v5
+BlackCoast_Seed_v1
+BlackCoast_Skirmish_v1
+Harju_AAS_v1
+Harju_AAS_v2
+Harju_AAS_v3
+Harju_Invasion_v1
+Harju_Invasion_v2
+Harju_Invasion_v3
+Harju_Invasion_v4
+Harju_Invasion_v5
+Harju_RAAS_v1
+Harju_RAAS_v2
+Harju_RAAS_v3
+Harju_RAAS_v4
+Harju_RAAS_v5
+Harju_RAAS_v6
+Harju_Seed_v1
+Harju_Skirmish_v1
+Harju_Skirmish_v2
+\.
