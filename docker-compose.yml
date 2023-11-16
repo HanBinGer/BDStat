@@ -1,0 +1,49 @@
+version: '2.0'
+
+services:
+  web:
+    build: ./src
+    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes:
+      - ./src/:/usr/src/app/
+    ports:
+      - 8002:8000
+    environment:
+      - DATABASE_URL=postgresql://SquadStat:SquadStat@db/SquadStatDB
+  db:
+    container_name: postgres_container
+    image: postgres:16.1-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ../2. Init Database:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=SquadStat
+      - POSTGRES_PASSWORD=SquadStat
+      - POSTGRES_DB=SquadStatDB
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "SquadStat@spbu.ru"
+      PGADMIN_DEFAULT_PASSWORD: "1234"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+    networks:
+      - postgres
+
+volumes:
+  postgres_data:
+  pgadmin-data:
+
+networks:
+  postgres:
+    driver: bridge
