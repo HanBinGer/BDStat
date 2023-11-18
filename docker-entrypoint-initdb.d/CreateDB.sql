@@ -6,7 +6,9 @@ CREATE TABLE players (
     total_deaths INT DEFAULT 0,
     total_assists INT DEFAULT 0,
     total_wins INT DEFAULT 0,
-    total_battles INT DEFAULT 0
+    total_battles INT DEFAULT 0,
+    kd REAL DEFAULT 0,
+    winrate REAL DEFAULT 0
 );
 
 CREATE TABLE weapon_types (

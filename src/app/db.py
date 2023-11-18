@@ -1,10 +1,10 @@
 import os
 
-from sqlalchemy import (Column, DateTime, Integer, Boolean, MetaData, String, Table, DateTime, ForeignKey,
-                        create_engine)
-from databases import Database
+from sqlalchemy import (Boolean, Column, DateTime, ForeignKey, Integer, REAL,
+                        MetaData, String, Table, create_engine)
+from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = os.getenv("DATABASE_URL")#"postgresql://postgres:1234@localhost/SquadStatDB"#
+DATABASE_URL = "postgresql://postgres:1234@localhost/squadstatdb"#os.getenv("DATABASE_URL")#
 
 # SQLAlchemy
 engine = create_engine(DATABASE_URL)
@@ -21,6 +21,8 @@ players = Table(
     Column("total_assists", Integer),
     Column("total_wins", Integer),
     Column("total_battles", Integer),
+    Column("kd", REAL),
+    Column("winrate", REAL)
 )
 
 weapon_types = Table(
@@ -59,5 +61,4 @@ session_weapons = Table(
 )
 
 
-# databases query builder
-db = Database(DATABASE_URL)
+sessions = sessionmaker(engine)

@@ -1,16 +1,19 @@
-from app.api import stats
-from app.db import engine, metadata, db
+#from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
-from contextlib import asynccontextmanager
+
+from app.api import players, leaderboard
+from app.db import engine, metadata
 
 metadata.create_all(engine)
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    await db.connect()
-    yield
-    await db.disconnect()
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     db = await engine.connect()
+#     yield
+#     await db.disconnect()
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
-app.include_router(stats.router)
+app.include_router(players.router)
+app.include_router(leaderboard.router)
