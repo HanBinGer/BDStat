@@ -5,6 +5,7 @@ from sqlalchemy import select, func, join
 from app.api.models import GameSessionCreate, PlayerCreate, SessionWeaponCreate
 from app.db import game_sessions, players, session_weapons, sessions, weapon_types
 from sqlalchemy.exc import IntegrityError
+from datetime import datetime, timedelta
 
 
 async def get_player(steamid64: str):
@@ -13,19 +14,22 @@ async def get_player(steamid64: str):
             result = session.execute(players.select().where(players.c.steamid64 == steamid64)).fetchone()
     return result
 
-async def get_all_sessions(steamid64: str):
-    with sessions() as session:
-        with session.begin():
-            result = session.execute(game_sessions.select().where(game_sessions.c.player_id == steamid64).order_by(game_sessions.c.session_date.desc())).fetchall()
-    return result
 
-async def get_last_sessions(steamid64: str, count: int = 10):
-    query = (
-        select(game_sessions)
-        .where(game_sessions.c.player_id == steamid64)
-        .order_by(game_sessions.c.session_date.desc())
-        .limit(count)
-    )
+async def get_sessions(steamid64: str, count: int | None = None, start_date: datetime | None = None, end_date: datetime | None = None):
+
+    query = select(game_sessions).where(game_sessions.c.player_id == steamid64)
+
+    if start_date != None:
+        query=query.where(game_sessions.c.session_date >= start_date)
+    if end_date != None:
+        query=query.where(game_sessions.c.session_date <= end_date)
+    
+    query=query.order_by(game_sessions.c.session_date.desc())
+
+    if count != None:
+        query=query.limit(count)
+    
+
     with sessions() as session:
         with session.begin():
             result = session.execute(query).fetchall()
@@ -61,7 +65,9 @@ async def create_game_session(game_session_create: GameSessionCreate, sessions_w
             )
     return result
 
-async def get_player_weapons(steamid64: str):
+
+
+async def get_player_weapons(steamid64: str, count: int | None=None, start_date: datetime | None = None, end_date: datetime | None = None):
     sel_wp = (
     select(
         weapon_types.c.weapon_id,
@@ -74,34 +80,20 @@ async def get_player_weapons(steamid64: str):
         .join(weapon_types, session_weapons.c.weapon_id == weapon_types.c.weapon_id)
     )
     .where(players.c.steamid64 == steamid64)
-    .group_by(weapon_types.c.weapon_id, weapon_types.c.weapon_name)
     )
+    if start_date!=None:
+        sel_wp=sel_wp.where(game_sessions.c.session_date >= start_date)
+    if end_date!=None:
+        sel_wp=sel_wp.where(game_sessions.c.session_date <= end_date+timedelta(days=1))
+    sel_wp=sel_wp.group_by(weapon_types.c.weapon_id, weapon_types.c.weapon_name)
+    if count!=None:
+        sel_wp=sel_wp.order_by(func.sum(session_weapons.c.kills).desc()).limit(count)
+    
     with sessions() as session:
         with session.begin():  
             result = session.execute(sel_wp).fetchall()
     return result
 
-async def get_player_weapons_top(steamid64: str, count: int = 10):
-    sel_wp = (
-    select(
-        weapon_types.c.weapon_id,
-        weapon_types.c.weapon_name,
-        func.sum(session_weapons.c.kills).label('total_kills')
-    )
-    .select_from(
-        join(players, game_sessions, players.c.steamid64 == game_sessions.c.player_id)
-        .join(session_weapons, game_sessions.c.session_id == session_weapons.c.session_id)
-        .join(weapon_types, session_weapons.c.weapon_id == weapon_types.c.weapon_id)
-    )
-    .where(players.c.steamid64 == steamid64)
-    .group_by(weapon_types.c.weapon_id, weapon_types.c.weapon_name)
-    .order_by(func.sum(session_weapons.c.kills).desc())
-    .limit(count)
-    )
-    with sessions() as session:
-        with session.begin():  
-            result = session.execute(sel_wp).fetchall()
-    return result
 
 async def get_top_winrate(count: int):
     query = (

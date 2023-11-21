@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import List
+from datetime import datetime
 
 class PlayerCreate(BaseModel):
     steamid64: str
@@ -25,6 +26,7 @@ class GameSessionCreate(BaseModel):
 
 class GameSessionScheme(GameSessionCreate):
     session_id: int
+    session_date: datetime
 
 class SessionWeaponCreate(BaseModel):
     weapon_id: int
