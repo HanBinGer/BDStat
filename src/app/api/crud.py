@@ -1,21 +1,28 @@
+from datetime import datetime, timedelta
 from typing import List
 
-from sqlalchemy import select, func, join
+from sqlalchemy import func, join, select
+from sqlalchemy.exc import IntegrityError
 
 from app.api.models import GameSessionCreate, PlayerCreate, SessionWeaponCreate
-from app.db import game_sessions, players, session_weapons, sessions, weapon_types
-from sqlalchemy.exc import IntegrityError
-from datetime import datetime, timedelta
+from app.db import (game_sessions, players, session_weapons, sessions,
+                    weapon_types)
 
 
-async def get_player(steamid64: str):
+def get_player(steamid64: str):
     with sessions() as session:
         with session.begin():
             result = session.execute(players.select().where(players.c.steamid64 == steamid64)).fetchone()
     return result
 
+def get_player_by_email(email: str):
+    with sessions() as session:
+        with session.begin():
+            result = session.execute(players.select().where(players.c.email ==email)).fetchone()
+    return result
 
-async def get_sessions(steamid64: str, count: int | None = None, start_date: datetime | None = None, end_date: datetime | None = None):
+
+def get_sessions(steamid64: str, count: int | None = None, start_date: datetime | None = None, end_date: datetime | None = None):
 
     query = select(game_sessions).where(game_sessions.c.player_id == steamid64)
 
@@ -40,12 +47,14 @@ def create_player(player_create: PlayerCreate):
         with sessions() as session:
             with session.begin():
                 result = session.execute(players.insert().values(**player_create.model_dump()))
+                print(result)
             return result
-    except IntegrityError as err:
-        print(err.params)
+    except IntegrityError:
+        raise
+        #print('err',err)
     
 
-async def create_game_session(game_session_create: GameSessionCreate, sessions_weapon_create: List[SessionWeaponCreate]):
+def create_game_session(game_session_create: GameSessionCreate, sessions_weapon_create: List[SessionWeaponCreate]):
     with sessions() as session:
         with session.begin():  
             result = session.execute(game_sessions.insert().values(**game_session_create.model_dump()).returning(game_sessions.c.session_id))  
@@ -67,7 +76,7 @@ async def create_game_session(game_session_create: GameSessionCreate, sessions_w
 
 
 
-async def get_player_weapons(steamid64: str, count: int | None=None, start_date: datetime | None = None, end_date: datetime | None = None):
+def get_player_weapons(steamid64: str, count: int | None=None, start_date: datetime | None = None, end_date: datetime | None = None):
     sel_wp = (
     select(
         weapon_types.c.weapon_id,
@@ -95,7 +104,7 @@ async def get_player_weapons(steamid64: str, count: int | None=None, start_date:
     return result
 
 
-async def get_top_winrate(count: int):
+def get_top_winrate(count: int):
     query = (
         select(players)
         .order_by(players.c.winrate.desc())
@@ -106,7 +115,7 @@ async def get_top_winrate(count: int):
             result = session.execute(query).fetchall()
     return result
 
-async def get_top_kd(count: int):
+def get_top_kd(count: int):
     query = (
         select(players)
         .order_by(players.c.kd.desc())
@@ -117,7 +126,7 @@ async def get_top_kd(count: int):
             result = session.execute(query).fetchall()
     return result
 
-async def get_top_kills(count: int):
+def get_top_kills(count: int):
     query = (
         select(players)
         .order_by(players.c.total_kills.desc())
@@ -128,7 +137,7 @@ async def get_top_kills(count: int):
             result = session.execute(query).fetchall()
     return result
 
-async def get_top_wins(count: int):
+def get_top_wins(count: int):
     query = (
         select(players)
         .order_by(players.c.total_wins.desc())
@@ -139,7 +148,7 @@ async def get_top_wins(count: int):
             result = session.execute(query).fetchall()
     return result
 
-async def get_top_battles(count: int):
+def get_top_battles(count: int):
     query = (
         select(players)
         .order_by(players.c.total_battles.desc())

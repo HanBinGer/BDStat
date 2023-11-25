@@ -1,10 +1,10 @@
 import os
 
-from sqlalchemy import (Boolean, Column, DateTime, ForeignKey, Integer, REAL,
+from sqlalchemy import (REAL, Boolean, Column, DateTime, ForeignKey, Integer,
                         MetaData, String, Table, create_engine)
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql://postgres:1234@localhost/squadstatdb"#os.getenv("DATABASE_URL")#
+DATABASE_URL = os.getenv("DATABASE_URL")#"postgresql://postgres:1234@localhost/squadstatdb"#
 
 # SQLAlchemy
 engine = create_engine(DATABASE_URL)
@@ -13,7 +13,7 @@ metadata = MetaData()
 players = Table(
     "players",
     metadata,
-    Column("steamid64", String(17), primary_key=True, index=True),
+    Column("steamid64", String(17), primary_key=True, index=True, unique=True),
     Column("player_name", String(50), index=True, nullable=False),
     Column("email", String(100), unique=True, index=True, nullable=False),
     Column("total_kills", Integer),

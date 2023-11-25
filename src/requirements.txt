@@ -4,6 +4,9 @@ fastapi
 SQLAlchemy
 uvicorn
 psycopg2
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
 
 # dev
 pytest

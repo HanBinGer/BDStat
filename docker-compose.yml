@@ -10,6 +10,9 @@ services:
       - 8002:8000
     environment:
       - DATABASE_URL=postgresql://SquadStat:SquadStat@db/SquadStatDB
+    depends_on:
+      db:
+        condition: service_healthy
   db:
     container_name: postgres_container
     image: postgres:16.1-alpine
@@ -20,6 +23,11 @@ services:
       - POSTGRES_USER=SquadStat
       - POSTGRES_PASSWORD=SquadStat
       - POSTGRES_DB=SquadStatDB
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U SquadStat -d SquadStatDB"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4:latest
