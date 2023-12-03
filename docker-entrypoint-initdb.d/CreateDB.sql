@@ -1,5 +1,5 @@
 CREATE TABLE players (
-    steamid64 VARCHAR(17) PRIMARY KEY UNIQUE,
+    steamid64 VARCHAR(17) PRIMARY KEY,
     player_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT null,
     total_kills INT DEFAULT 0,
@@ -12,20 +12,18 @@ CREATE TABLE players (
 );
 
 CREATE TABLE weapon_types (
-    weapon_id SERIAL PRIMARY KEY,
-    weapon_name VARCHAR(50) NOT NULL
+    weapon_name VARCHAR(50) PRIMARY KEY
 );
 
 CREATE TABLE maps (
-    map_id SERIAL PRIMARY KEY,
-    map_name VARCHAR(50) NOT NULL
+    map_name VARCHAR(50) PRIMARY KEY
 );
 
 
 CREATE TABLE game_sessions (
     session_id SERIAL PRIMARY KEY,
     player_id VARCHAR(17) REFERENCES players(steamid64),
-    map_id INT references maps(map_id),
+    map_name VARCHAR(50) references maps(map_name),
     session_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     total_kills INT DEFAULT 0,
     total_deaths INT DEFAULT 0,
@@ -35,9 +33,9 @@ CREATE TABLE game_sessions (
 
 CREATE TABLE session_weapons (
     session_id INT REFERENCES game_sessions(session_id),
-    weapon_id INT REFERENCES weapon_types(weapon_id),
+    weapon_name VARCHAR(50) REFERENCES weapon_types(weapon_name),
     kills INT DEFAULT 0,
-    UNIQUE (session_id, weapon_id)
+    UNIQUE (session_id, weapon_name)
 );
 
 COPY weapon_types (weapon_name) FROM stdin;

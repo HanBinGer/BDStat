@@ -20,7 +20,7 @@ class PlayerScheme(PlayerCreate):
 
 class GameSessionCreate(BaseModel):
     player_id: str
-    map_id: int
+    map_name: str
     total_kills: int
     total_deaths: int
     total_assists: int
@@ -31,16 +31,15 @@ class GameSessionScheme(GameSessionCreate):
     session_date: datetime
 
 class SessionWeaponCreate(BaseModel):
-    weapon_id: int
+    weapon_name: str
     kills: int
 
 class SessionWeaponScheme(BaseModel):
     steamid64: str
-    weapon_id: int
+    weapon_name: str
     kills: int
 
 class WeaponStat(BaseModel):
-    weapon_id: int
     weapon_name: str
     total_kills: int
 

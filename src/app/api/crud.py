@@ -79,14 +79,13 @@ def create_game_session(game_session_create: GameSessionCreate, sessions_weapon_
 def get_player_weapons(steamid64: str, count: int | None=None, start_date: datetime | None = None, end_date: datetime | None = None):
     sel_wp = (
     select(
-        weapon_types.c.weapon_id,
         weapon_types.c.weapon_name,
         func.sum(session_weapons.c.kills).label('total_kills')
     )
     .select_from(
         join(players, game_sessions, players.c.steamid64 == game_sessions.c.player_id)
         .join(session_weapons, game_sessions.c.session_id == session_weapons.c.session_id)
-        .join(weapon_types, session_weapons.c.weapon_id == weapon_types.c.weapon_id)
+        .join(weapon_types, session_weapons.c.weapon_name == weapon_types.c.weapon_name)
     )
     .where(players.c.steamid64 == steamid64)
     )
@@ -94,7 +93,7 @@ def get_player_weapons(steamid64: str, count: int | None=None, start_date: datet
         sel_wp=sel_wp.where(game_sessions.c.session_date >= start_date)
     if end_date!=None:
         sel_wp=sel_wp.where(game_sessions.c.session_date <= end_date+timedelta(days=1))
-    sel_wp=sel_wp.group_by(weapon_types.c.weapon_id, weapon_types.c.weapon_name)
+    sel_wp=sel_wp.group_by(weapon_types.c.weapon_name)
     if count!=None:
         sel_wp=sel_wp.order_by(func.sum(session_weapons.c.kills).desc()).limit(count)
     

@@ -13,7 +13,7 @@ metadata = MetaData()
 players = Table(
     "players",
     metadata,
-    Column("steamid64", String(17), primary_key=True, index=True, unique=True),
+    Column("steamid64", String(17), primary_key=True, index=True),
     Column("player_name", String(50), index=True, nullable=False),
     Column("email", String(100), unique=True, index=True, nullable=False),
     Column("total_kills", Integer),
@@ -28,15 +28,13 @@ players = Table(
 weapon_types = Table(
     "weapon_types",
     metadata,
-    Column("weapon_id", Integer, primary_key=True, index=True),
-    Column("weapon_name", String(50), index=True, nullable=False),
+    Column("weapon_name", String(50), index=True, primary_key=True),
 )
 
 maps = Table(
     "maps",
     metadata,
-    Column("map_id", Integer, primary_key=True, index=True),
-    Column("map_name", String(50), index=True, nullable=False),
+    Column("map_name", String(50), index=True, primary_key=True),
 )
 
 game_sessions = Table(
@@ -44,7 +42,7 @@ game_sessions = Table(
     metadata,
     Column("session_id", Integer, primary_key=True, index=True),
     Column("player_id", String(17), ForeignKey("players.steamid64")),
-    Column("map_id", Integer, ForeignKey("maps.map_id")),
+    Column("map_name", String(50), ForeignKey("maps.map_name")),
     Column("session_date", DateTime),
     Column("total_kills", Integer),
     Column("total_deaths", Integer),
@@ -56,7 +54,7 @@ session_weapons = Table(
     "session_weapons",
     metadata,
     Column("session_id", Integer, ForeignKey("game_sessions.session_id"), primary_key=True),
-    Column("weapon_id", Integer, ForeignKey("weapon_types.weapon_id"), primary_key=True),
+    Column("weapon_name", String(50), ForeignKey("weapon_types.weapon_name")),
     Column("kills", Integer),
 )
 
