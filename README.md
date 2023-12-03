@@ -36,7 +36,7 @@ SquadStatDB - база данных для управления статисти
 
 - **player_id:** Ссылка на steamid64 из таблицы "players".
 - **session_date**: Дата и время завершения сессии.
-- **map_id:** Ссылка на map_id из таблицы "maps".
+- **map_name:** Ссылка на map_name из таблицы "maps".
 - **total_kills, total_deaths, total_assists:** Целые числа, неотрицательные.
 - **is_win:** Булево значение.
 
@@ -45,13 +45,13 @@ SquadStatDB - база данных для управления статисти
 Таблица хранит статистику использованного оружия для каждой сессии.
 
 - **session_id:** Ссылка на session_id из таблицы "game_sessions".
-- **weapon_id:** Ссылка на weapon_id из таблицы "weapon_types".
+- **weapon_name:** Ссылка на weapon_name из таблицы "weapon_types".
 - **kills:** Целое число, неотрицательное.
 - Пара (session_id, weapon_id) уникальна.
 
 ## Общие ограничения целостности
 - Внешние ключи в таблицах "game_sessions" и "session_weapons" обеспечивают связь с соответствующими записями в других таблицах.
-- Уникальность значений в полях "email" (в таблице "players") и "session_id, weapon_id" (в таблице "session_weapons").
+- Уникальность значений в полях "email" (в таблице "players") и "session_id, weapon_name" (в таблице "session_weapons").
 - Значения в полях "steamid64" (в таблице "players") и "player_id" (в таблице "game_sessions") должны соответствовать значениям внешнего ключа.
 
 # Пользовательские роли
